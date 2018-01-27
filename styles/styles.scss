@@ -1,6 +1,11 @@
+
+@import "components/normalize";
+@import "components/mixins";
+@import "components/variables";
+@import "components/typography";
 @import "components/header";
 @import "components/footer";
 
 body {
-    background:red;
+    background:white;   
 }
