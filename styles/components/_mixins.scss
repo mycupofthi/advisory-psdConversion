@@ -1,5 +1,29 @@
-@mixin headingFont($fontSize, $fontColor) {
+// @mixin headingFont($fontSize, $fontColor) {
+//     font-size: $fontSize;
+//     color: $fontColor;
+//     border:2px solid yellow;
+// }
+
+@mixin button($fontColor, $backgroundColor) {
+    font-family: $fontMain;
+    color: $fontColor;
+    background: $backgroundColor;
+    letter-spacing:0.45px;
+    font-size:1.6rem;
+    padding: 12px 20px;
+	text-transform: capitalize;
+	text-decoration: none;
+	display: inline-block;
+	&:hover {
+		background: darken($backgroundColor, 10)
+	}
+}
+
+@mixin headline($fontSize, $fontColor) {
     font-size: $fontSize;
     color: $fontColor;
-    border:2px solid yellow;
+    font-family: $fontHeader;
+    line-height:80px;
+    margin:0;
+    font-weight:700;
 }

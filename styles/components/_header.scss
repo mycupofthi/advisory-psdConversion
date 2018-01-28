@@ -1,8 +1,166 @@
 header {
-    width:90%;
+    width:100%;
+    background:white;
+
+    ul {
+        display:flex;
+        justify-content: space-between; 
+        padding:1%;
+    }
+
+    h2 {
+        color: darken($grey, 20);
+        font-size:1.8rem;
+        margin:0;
+        line-height:1.1;
+        padding-bottom:17px;
+    }
+
+    p {
+        margin:0;
+        color:rgba(0, 0, 0, 0.7);
+    }
 }
 
+.headerFlex {
+    display:flex;
+    justify-content: space-between;
+}
 
-//setup + save partial
-//import
-//then change partials
+.header-topBar {
+    background:#f5f5f5;
+    padding:19.5px 0;
+}
+
+.header-topBar-left, 
+.header-topBar-right {
+    display:flex;
+    align-items:center;
+    div {
+        display:flex;
+    }
+}
+
+.header-topBar-left {
+    justify-content: flex-start;
+    flex:1 0 50%;
+}
+.header-topBar-right {
+    display:flex;
+    flex:1 0 50%;
+    justify-content: flex-end;
+    img {
+        padding-right:2%;
+    }
+    .select-language {
+    background:transparent;
+    border:none;
+    @extend p;
+    margin-right:5%;
+    }
+    .header-topBar-rightNav {
+        li {
+            flex:1 0 auto;
+            text-align:right;
+            display:flex;
+            padding:2%;
+            align-items:center;
+            &:first-of-type {
+                padding-left:10%;
+            }
+        }
+    }
+}
+
+.header-companyInfo {
+    padding:35px 0;
+    .logo {
+        display:flex;
+        flex:1 1 29%;
+        img {
+            align-self:center;
+        }
+    }
+    .header-companyInfo-info {
+        padding:0 5%;
+    }
+    .socialContainer {
+        padding:3% 5%;
+        flex:1 1 29%;        
+    }
+}
+
+.header-nav {
+    background-color:$accentColor;
+    color:white;
+    
+    a {
+        color:white;
+        font-size:1.8rem;
+    }
+    .header-nav-main {
+        flex:1 0 80%;
+        justify-content: space-between;
+        padding:2%;
+        border-right:1px solid #5499f7;
+        li {
+            text-transform: uppercase;
+            padding:0 2%;
+        }
+    }
+    .header-nav-rightSocial {
+        flex:1 0 20%;
+        text-align:right;
+        justify-content: space-between;
+        padding:2%;
+    }
+}
+
+.header-nav-rightShop {
+    display:flex;
+    margin:auto auto;
+    img {
+        padding:0 20px;
+    }
+    .shop-cart {
+        position:relative;
+        &:before {
+            content:' ';
+            width:20px;
+            height:20px;
+            background:black;
+            top:0;
+            left:0;
+            position: absolute;
+        }
+    }
+}
+
+.header-banner {
+    height:100vh;
+    background-image:linear-gradient(rgba(1,22,50,0.45),rgba(1,22,50,0.45)), url('../assets/hero-img.jpg');
+    background-position: center;
+    display:flex;
+    .headerFlex {
+        flex-direction: column;
+        justify-content: center;
+    }
+    .header-banner-title {
+        padding-bottom:50px;
+        h1 {
+            padding:5px 0;
+        }
+    }
+    .header-banner-subtitle {
+        padding-bottom:60px;
+        p {
+            color:white;
+            font-size:1.8rem;
+            line-height:2;
+        }
+    }
+    a {
+        justify-content: center;
+        align-self: flex-start;
+    }
+}

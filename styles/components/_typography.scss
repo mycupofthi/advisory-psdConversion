@@ -1,11 +1,41 @@
-.primaryColor {
-    color: #000000;
-}
-
-.secondaryColor {
-    color: #ffffff;
-}
-
+// COLORS
 .accentColor {
-    color:#2f87fd;
+    color: $accentColor;
 }
+.primaryColor {
+    color: $primaryColor;
+}
+.secondaryColor {
+    color: $secondaryColor;
+}
+
+html {
+    font-size:62.5%;
+}
+
+body {
+    font-family: $fontMain;
+    font-size:1.6rem;
+    letter-spacing: 0.4px;
+}
+
+h1 {
+    @include headline(7rem, white);
+}
+
+a {
+    text-decoration: none;
+    color: $grey;
+    display:block;
+    white-space: nowrap;
+}
+
+.subHeadline {
+    @include headline(2rem, $accentColor);
+}
+
+.headline {
+    @include headline(4.5rem, $darkgrey);
+    line-height:1.5;
+}
+

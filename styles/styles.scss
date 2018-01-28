@@ -7,5 +7,150 @@
 @import "components/footer";
 
 body {
-    background:white;   
+    background:$secondaryColor;   
+}
+
+ul {
+    margin:0;
+    padding:0;
+    li {
+        list-style: none;
+        display:inline-block;
+    }
+}
+
+img {
+    max-width:100%;
+    align-self:center;
+}
+
+.wrapper {
+    max-width:1170px;
+    margin:0 auto;
+    width:80%;
+}
+
+.align-self {
+    align-self: center;
+}
+
+.flexContainer {
+    display:flex;
+}
+
+.socialContainer {
+    width:100%;
+    padding:2%;
+    white-space: nowrap;
+    img {
+        padding-right:8%;
+    }
+}
+
+// MAIN
+
+// Company Description 
+.main-help {
+    margin:100px;
+    .main-help .subHeadline {
+    @include headline(2rem, $accentColor);
+    }
+    .main-helpOffer .subHeadline {
+        @include headline(2rem, $darkgrey);
+    }
+    .headline {
+        line-height:1.2;
+        padding-bottom:50px;
+    }
+    .main-helpDescription {
+        flex:1 0 70%;
+        padding-right:2%;
+        p {
+            line-height:2.5;
+            color:$grey;
+            padding-bottom:60px;
+        }
+    }
+    aside {
+        flex:1 0 30%;
+        background:#f6f6f6;
+        padding:2%;
+        border-right:1px solid $accentColor;
+    }
+}
+
+// Services We Provide 
+.main-services {
+    background:#f4f4f4;
+    text-align: center;
+    .subHeadline {
+        @include headline(2rem, $darkgrey);
+        padding:80px 0 10px;
+        line-height:0;
+        z-index:10;
+        position:relative;
+    }
+    .headline {
+        @include headline(5.5rem, $accentColor);
+        padding-bottom:100px;
+        position:relative;
+        z-index:1000;
+        &:before {
+            content:'s';
+            position:absolute;
+            font-size:27.5rem;
+            color:white;
+            z-index:-1;
+            left:50%;
+            transform: translateX(-50%);
+            top:-30px;
+        }
+        &:after {
+            content:' ';
+            width:80px;
+            height:2px;
+            background:$accentColor;
+            position:absolute;
+            display:block;
+            top:110px;
+            left:50%;
+            transform: translateX(-50%);
+            z-index:2;
+        }
+    }
+    .main-gallery {
+        flex-wrap: wrap;
+        justify-content: space-around;
+        .main-galleryThird {    
+            // flex:1 1 29%;
+            width:30%;
+            padding:2%;
+            text-align: center;
+            background:white;
+            margin-bottom:3%;
+            &:nth-of-type(3n+1) {
+                margin-right:auto;
+            }
+            &:nth-of-type(3n+3) {
+                margin-left:auto;
+            }
+            p {
+                line-height:2;
+            }
+            img {
+                padding:50px 0;
+            }
+        }
+    }
+}
+
+// Buttons
+.btn-accent {
+    @include button($secondaryColor,$accentColor);
+}
+
+.btn-accentInverted {
+    @include button($accentColor,$secondaryColor);
+    border:1px solid $accentColor;
+    text-transform: uppercase;
 }
