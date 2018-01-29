@@ -13,9 +13,10 @@
     padding: 12px 20px;
 	text-transform: capitalize;
 	text-decoration: none;
-	display: inline-block;
+    display: inline-block;
+    transition:all 1s;
 	&:hover {
-		background: darken($backgroundColor, 10)
+		background: darken($backgroundColor, 20)
 	}
 }
 

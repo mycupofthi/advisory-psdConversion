@@ -1,0 +1,107 @@
+footer {
+    padding-top:160px;
+    background:#202020;
+    .flexContainer {
+        justify-content: space-between;
+        padding-bottom:80px;
+    }
+    .footer-footer {
+        border-top:1px solid #363434;
+        p, i {
+            color: #949292;
+        }
+    }
+}
+.footerContainer {
+    width:30%;
+    h2 {
+        color:white;
+        font-family:$fontSecondary;
+        font-weight:500;
+        font-size:1.8rem;
+    }
+    p, a:not(.link-quote) {
+        line-height: 2;
+        color:#b1afaf;
+    }
+    p, li {
+        line-height:2;
+        &:first-of-type {
+            padding-top:40px;
+        }
+    }
+    ul {
+        display:flex;
+        flex-direction: column;
+        li:first-of-type a {
+            color:$accentColor;
+        }
+    }
+}
+
+.footer-news {
+    p:not(.footer-newsDate) {
+        color:$accentColor;
+        font-family:$fontSecondary;
+        font-weight:400;
+        font-size:1.5rem;
+    }
+    .footer-newsDate {
+        color:#546454;
+        margin-top:0;
+        font-size:1.5rem;
+    }
+    div:first-of-type {
+        padding-bottom:30px;
+        border-bottom:1px solid #363434;
+    }
+}
+
+.footer-footer .flexContainer {
+    align-items: center;
+    padding:30px 0;
+    .footer-footerSocial {
+        display:flex;
+        a:not(.fa-vine) {
+            padding:0 10px;
+        }
+    }
+}
+
+.link-quote {
+    color:$accentColor;
+    padding:30px 3%;
+    font-family:$fontSecondary;
+    font-size:1.5rem;
+}
+
+// Email Subscription
+form {
+    padding:60px 0;
+    label {
+        color:$accentColor;
+        font-family:$fontSecondary;
+        font-size:1.5rem;
+        font-weight:500;
+    }
+    input[type="email"] {
+        background: #313030;
+        border:none;
+        padding:15px 20px;
+        margin:30px 0;
+        font-family:$fontMain;
+    }
+    .submit {
+        background:$accentColor;
+        border:none;
+        color:white;
+        padding:15px 40px;
+        border-radius:23px;
+        position:relative;
+        left:-20px;
+    }
+}
+
+.fa-arrow-right {
+    color:white;
+}

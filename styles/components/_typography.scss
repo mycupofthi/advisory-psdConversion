@@ -35,8 +35,37 @@ p {
    color:$darkgrey;
 }
 
+ul {
+    padding:0;
+    margin:0;
+    li {
+        list-style:none;
+        a {
+            transition:all 0.5s;
+            padding-bottom:2px;
+            border-bottom:2px solid transparent;
+        }
+        &:hover a {
+            color:darken($accentColor,30);
+            border-bottom:2px solid darken($accentColor, 30);
+        }
+    }
+}
+
 .headline {
     @include headline(4.5rem, $darkgrey);
     line-height:1.5;
+}
+
+.link-accent {
+    color:$accentColor;
+    font-family: $fontSecondary;
+    padding:5px;
+    transition:all 1s;
+    &:hover {
+        background:lighten($accentColor,20);
+        color:white;
+        padding-left:30px;
+    }
 }
 
