@@ -26,12 +26,13 @@ h1 {
 a {
     text-decoration: none;
     color: $grey;
-    display:block;
     white-space: nowrap;
+    display:inline-block;
 }
 
-.subHeadline {
-    @include headline(2rem, $accentColor);
+p {
+   line-height:2;
+   color:$darkgrey;
 }
 
 .headline {

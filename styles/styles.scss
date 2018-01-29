@@ -52,7 +52,7 @@ img {
 // Company Description 
 .main-help {
     margin:100px;
-    .main-help .subHeadline {
+    .subHeadline {
     @include headline(2rem, $accentColor);
     }
     .main-helpOffer .subHeadline {
@@ -83,19 +83,16 @@ img {
 .main-services {
     background:#f4f4f4;
     text-align: center;
+    padding:80px 0 20px;
+
     .subHeadline {
         @include headline(2rem, $darkgrey);
-        padding:80px 0 10px;
         line-height:0;
         z-index:10;
         position:relative;
-    }
-    .headline {
-        @include headline(5.5rem, $accentColor);
-        padding-bottom:100px;
-        position:relative;
-        z-index:1000;
-        &:before {
+        left:50%;
+        transform: translateX(-50%);
+        &::after {
             content:'s';
             position:absolute;
             font-size:27.5rem;
@@ -103,17 +100,17 @@ img {
             z-index:-1;
             left:50%;
             transform: translateX(-50%);
-            top:-30px;
+            top:10px;
         }
+    }
+    .headline {
+        @include headline(5.5rem, $accentColor);
+        padding-bottom:50px;
+        position:relative;
+        z-index:15;
+
         &:after {
-            content:' ';
-            width:80px;
-            height:2px;
-            background:$accentColor;
-            position:absolute;
-            display:block;
-            top:110px;
-            left:50%;
+            @include headlineDivider(50%,90px,$accentColor);
             transform: translateX(-50%);
             z-index:2;
         }
@@ -134,14 +131,362 @@ img {
             &:nth-of-type(3n+3) {
                 margin-left:auto;
             }
-            p {
-                line-height:2;
-            }
             img {
                 padding:50px 0;
             }
         }
     }
+}
+
+// Why Choose Us
+.main-why {
+    padding:150px 0;
+    .main-whyReason {
+        display:flex;
+        padding-bottom:50px;
+    }
+    .main-whyInfo {
+        flex:1 0 60%;
+        padding-right:3%;
+    }
+    .main-whyImg {
+        flex:1 0 40%;
+    }
+    .main-gallery {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+}
+
+.main-whyInfo .headline {
+    @include headline(4.6rem,$darkgrey);
+    position:relative;
+    padding-bottom:40px;
+    &:after {
+        @include headlineDivider(0,100px, $accentColor)
+    }
+}
+.headline-caption {
+    font-family:$fontSecondary;
+    color:$accentColor;
+    font-size:1.8rem;
+    font-weight:500;
+}
+
+.main-why .main-galleryThird {    
+    width:32%;
+    padding:2%;
+    background:rgba(228, 228, 228, 0);
+    border:1px solid #eeeeee;
+    &:first-of-type  {
+        margin-right:auto;
+    }
+    &:nth-of-type(2) {
+        border-left:1px solid $accentColor;
+        h2 {
+            color:$accentColor;
+        }
+    }
+    &:last-of-type {
+        margin-left:auto;
+    }
+    img {
+        padding:2%;
+    }
+    .galleryContainer {
+        display:flex;
+        h2 {
+            font-size:1.8rem;
+            padding:1%;
+        } 
+    }
+}
+
+// Main Stats 
+.main-stats {
+    background:#1f2329;
+    h2 {
+       color:white;
+       font-size:2.2rem;
+       letter-spacing:0.55px;
+       font-weight:400;
+    }
+    h3 {
+        font-family:$fontSecondary;
+        color:$accentColor;
+        font-weight:700;
+        font-size:4.4rem;
+    }
+    div {
+        flex:1 0 25%;
+        padding:5% 5%;
+        &:not(last-of-type) {
+            border-right:2px solid #313f51;
+        }
+    }
+}
+
+// Projects We've Done
+.main-projects,
+.main-news {
+    padding: 120px 0;
+    text-align:center;
+    .subHeadline {
+        @include headline(2rem, $darkgrey);
+        z-index:10;
+        position:relative;
+        line-height:20px;
+        &::after {
+            content:'P';
+            color: #f6f3f3;
+            position:absolute;
+            font-size:26rem;
+            z-index:-1;
+            left:50%;
+            transform: translateX(-50%);
+            top:60px;
+        }
+    }
+    .headline {
+        @include headline(5.5rem, $accentColor);
+        padding-bottom:50px;
+        position:relative;
+        z-index:15;
+        &:after {
+            @include headlineDivider(50%,90px, $accentColor);
+            transform: translateX(-50%);
+            z-index:2;
+        }
+    }
+    .main-caption {
+        text-align: left;
+        padding:25px 0;
+        div:first-child {
+            flex:1 0 70%;
+        }
+        div:last-child {
+            flex:1 0 30%;
+            text-align: right;
+        }
+        p {
+            font-size:2rem;
+            margin:0;
+        }
+        a {
+            color:$accentColor;
+            font-family: $fontSecondary;
+            padding:5px;
+            transition:all 1s;
+            &:hover {
+                background:lighten($accentColor,20);
+                color:white;
+            }
+        }
+    }
+    .main-galleryThird {    
+        width:32%;
+        margin:60px 0;
+        &:first-of-type  {
+            margin-right:auto;
+        }
+        &:last-of-type {
+            margin-left:auto;
+        }
+    }
+}
+
+// Reviews {
+.main-reviews {
+    background:$accentColor;
+    color:white;
+    text-align: center;
+    padding:5% 0;
+    p {
+        font-size:2.1rem;
+        color:white;
+    }
+    .reviewer {
+        position:relative;
+        padding-top:80px;
+        margin-bottom:0;
+        &:after {
+            @include headlineDivider(50%,70px,white);
+            transform: translateX(-50%);
+        }
+    }
+    .reviewer-title {
+        font-size:1.6rem;
+        margin:0;
+        line-height:1.2;
+    }
+    .reviews-img {
+        flex:1 0 40%;
+        
+    }
+    .reviews-reviews {
+        flex:1 0 60%;
+    }
+}
+
+// News from Our Blog 
+.main-news {
+    .subHeadline:after {
+        content:'B';
+    }
+    .galleryCaption {
+        text-align: left;
+        padding:0;
+        margin:0;
+        h2 {
+            font-family: $fontSecondary;
+            font-weight:600;
+            font-size:1.75rem;
+            color:$accentColor;
+        }
+        .date {
+            color: $accentColor;
+        }
+    }
+}
+
+// Main Parters 
+.main-partners {
+    background:$accentColor;
+    .flexContainer {
+        justify-content: space-between;
+        div {
+            padding:100px 0;
+        }
+    }
+}
+
+// Contact Info
+.main-contact {
+    position:relative;
+    .main-contact-contact {
+        position:absolute;
+        top:-50px;
+        left:50%;
+        transform: translateX(-50%);
+        box-shadow: 0px 32px 0px -13px rgba(66,65,65,1);
+        .flexContainer {
+            background:#313030;
+            justify-content: center;
+            p {
+                color:white;
+                font-size:1.5rem;
+            }
+        }
+    }
+}
+
+// Footer 
+footer {
+    padding-top:160px;
+    background:#202020;
+    .flexContainer {
+        justify-content: space-between;
+        padding-bottom:80px;
+    }
+    .footer-footer {
+        border-top:1px solid #363434;
+        p, i {
+            color: #949292;
+        }
+    }
+}
+.footerContainer {
+    width:30%;
+    h2 {
+        color:white;
+        font-family:$fontSecondary;
+        font-weight:500;
+        font-size:1.8rem;
+    }
+    p, a:not(.link-quote) {
+        line-height: 2;
+        color:#b1afaf;
+    }
+    p, li {
+        line-height:2;
+        &:first-of-type {
+            padding-top:40px;
+        }
+    }
+    ul {
+        display:flex;
+        flex-direction: column;
+        li:first-of-type a {
+            color:$accentColor;
+        }
+    }
+}
+
+.footer-news {
+    p:not(.footer-newsDate) {
+        color:$accentColor;
+        font-family:$fontSecondary;
+        font-weight:400;
+        font-size:1.5rem;
+    }
+    .footer-newsDate {
+        color:#546454;
+        margin-top:0;
+        font-size:1.5rem;
+    }
+    div:first-of-type {
+        padding-bottom:30px;
+        border-bottom:1px solid #363434;
+    }
+}
+
+.footer-footer .flexContainer {
+    align-items: center;
+    padding:30px 0;
+    .footer-footerSocial {
+        display:flex;
+        a:not(.fa-vine) {
+            padding:0 10px;
+        }
+    }
+}
+
+.link-quote {
+    color:$accentColor;
+    padding:30px 3%;
+    font-family:$fontSecondary;
+    font-size:1.5rem;
+}
+
+// Email Subscription
+form {
+    padding:60px 0;
+    label {
+        color:$accentColor;
+        font-family:$fontSecondary;
+        font-size:1.5rem;
+        font-weight:500;
+    }
+    input[type="email"] {
+        background: #313030;
+        border:none;
+        padding:15px 20px;
+        margin:30px 0;
+        font-family:$fontMain;
+    }
+    .submit {
+        background:$accentColor;
+        border:none;
+        color:white;
+        padding:15px 40px;
+        border-radius:23px;
+        position:relative;
+        left:-20px;
+    }
+}
+
+.fa-arrow-right {
+    color:white;
 }
 
 // Buttons

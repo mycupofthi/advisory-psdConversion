@@ -27,3 +27,14 @@
     margin:0;
     font-weight:700;
 }
+
+@mixin headlineDivider($left,$top,$backgroundColor) {
+    content:' ';
+    width:80px;
+    height:2px;
+    display:block;
+    position:absolute;
+    left:$left;
+    top:$top;
+    background:$backgroundColor;
+}
