@@ -1,14 +1,3 @@
-// COLORS
-.accentColor {
-    color: $accentColor;
-}
-.primaryColor {
-    color: $primaryColor;
-}
-.secondaryColor {
-    color: $secondaryColor;
-}
-
 html {
     font-size:62.5%;
 }
@@ -21,6 +10,16 @@ body {
 
 h1 {
     @include headline(7rem, white);
+    @media (max-width: 940px) {
+        font-size:5rem;
+    }
+    @media (max-width: 768px) {
+        font-size:5rem;
+        line-height:1.2;
+    }
+    @media (max-width:490px) {
+        font-size:4rem;
+    }
 }
 
 a {
@@ -43,11 +42,14 @@ ul {
         a {
             transition:all 0.5s;
             padding-bottom:2px;
-            border-bottom:2px solid transparent;
         }
         &:hover a {
             color:darken($accentColor,30);
-            border-bottom:2px solid darken($accentColor, 30);
+            transform:scale(1.2);
+            @media (max-width:940px) {
+                transform:scale(1);
+                margin:0;
+            }
         }
     }
 }
@@ -55,6 +57,12 @@ ul {
 .headline {
     @include headline(4.5rem, $darkgrey);
     line-height:1.5;
+    @media (max-width: 940px) {
+        font-size:4rem;
+    }
+    @media (max-width:490px) {
+        font-size:3.5rem;
+    }
 }
 
 .link-accent {

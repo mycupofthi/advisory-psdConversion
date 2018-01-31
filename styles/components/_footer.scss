@@ -1,9 +1,17 @@
 footer {
     padding-top:160px;
     background:#202020;
+    @media (max-width:768px) {
+        padding-top:250px;
+    }
     .flexContainer {
         justify-content: space-between;
         padding-bottom:80px;
+        @media (max-width:940px) {
+            flex-wrap:wrap;
+            padding:0 30px;
+            justify-content: flex-start;
+        }
     }
     .footer-footer {
         border-top:1px solid #363434;
@@ -13,7 +21,19 @@ footer {
     }
 }
 .footerContainer {
-    width:30%;
+    width:31%;
+    @media (max-width:940px) {
+        width:50%;
+    }
+    @media (max-width:490px) {
+        width:100%;
+        margin-top:20px;    
+        padding-top:20px;
+        border-top:1px solid #363434;
+    }
+    &:nth-of-type(2) {
+        padding:0 30px;
+    }
     h2 {
         color:white;
         font-family:$fontSecondary;
@@ -28,6 +48,9 @@ footer {
         line-height:2;
         &:first-of-type {
             padding-top:40px;
+            @media (max-width:490px) {
+                padding-top:10px;
+            }
         }
     }
     ul {
@@ -37,6 +60,13 @@ footer {
             color:$accentColor;
         }
     }
+    &:first-of-type {
+        min-width:288px;
+        @media (max-width:940px) {
+            width:100%;
+        }
+    }
+
 }
 
 .footer-news {
@@ -47,7 +77,7 @@ footer {
         font-size:1.5rem;
     }
     .footer-newsDate {
-        color:#546454;
+        color:#545454;
         margin-top:0;
         font-size:1.5rem;
     }
@@ -60,6 +90,7 @@ footer {
 .footer-footer .flexContainer {
     align-items: center;
     padding:30px 0;
+    justify-content: space-between;
     .footer-footerSocial {
         display:flex;
         a:not(.fa-vine) {
@@ -68,17 +99,29 @@ footer {
     }
 }
 
+.fa-arrow-right {
+    color:white;
+}
+
 .link-quote {
     color:$accentColor;
     padding:30px 3%;
     font-family:$fontSecondary;
     font-size:1.5rem;
+    &:hover {
+        color:white;
+    }
 }
 
 // Email Subscription
+
 form {
     padding:60px 0;
-    label {
+    min-width:195px;
+    @media (max-width:940px) {
+        padding-top:20px;
+    }
+    p.email {
         color:$accentColor;
         font-family:$fontSecondary;
         font-size:1.5rem;
@@ -87,7 +130,7 @@ form {
     input[type="email"] {
         background: #313030;
         border:none;
-        padding:15px 20px;
+        padding:15px 15px;
         margin:30px 0;
         font-family:$fontMain;
     }
@@ -95,13 +138,14 @@ form {
         background:$accentColor;
         border:none;
         color:white;
-        padding:15px 40px;
+        padding:18px 40px;
         border-radius:23px;
         position:relative;
-        left:-20px;
+        left:-25px;
+        font-family: FontAwesome;
+        &:hover {
+            background:darken($accentColor, 20);
+        }
     }
 }
 
-.fa-arrow-right {
-    color:white;
-}

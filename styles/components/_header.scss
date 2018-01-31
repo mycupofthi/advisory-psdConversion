@@ -5,7 +5,6 @@ header {
     ul {
         display:flex;
         justify-content: space-between; 
-        padding:1%;
     }
 
     h2 {
@@ -13,7 +12,6 @@ header {
         font-size:1.8rem;
         margin:0;
         line-height:1.1;
-        padding-bottom:10px;
     }
 
     p {
@@ -28,22 +26,45 @@ header {
     align-items: center;
 }
 
+
+// Top Navigation Bar
 .header-topBar {
     background:#f5f5f5;
     padding:19.5px 0;
+    @media (max-width: 768px) {
+        display:none;
+    }
+    .headerFlex {
+        @media (max-width: 940px) {
+            flex-direction: column-reverse;
+        }
+    }
 }
 
 .header-topBar-left {
     display:flex;
     justify-content: space-between;
-    width:40%;
+    flex:1 1 40%;
+    align-items: center;
+    @media (max-width: 940px) {
+        justify-content: space-between;
+        width:100%;
+    }
+    .contactContainer {
+        &:last-of-type {
+            @media (max-width: 940px) {
+                flex-direction: row-reverse;
+                text-align:right;
+            }
+        }
+    }
 }
 .header-topBar-right {
     display:flex;
-    width:40%;
+    flex:1 0 40%;
     justify-content: flex-end;
     .contactContainer {
-        margin-right:25px;
+        margin-right:20px;
     }
     .select-language {
     background:transparent;
@@ -60,8 +81,18 @@ header {
     }
 }
 
+// Logo Bar
+
 .header-companyInfo {
     padding:35px 0;
+    @media (max-width: 940px) {
+        padding-bottom:20px;
+    }
+    .headerFlex {
+        @media (max-width: 940px) {
+            flex-direction: column;
+        }
+    }
     .logo {
         h2 {
             @include headline(3.2rem, #272626);
@@ -78,67 +109,124 @@ header {
     .header-companyInfo-info {
         padding:0 5%;
         width:55%;
+        @extend .headerFlex;
+        @media (max-width: 940px) {
+            flex-direction: row;
+            width:100%;
+            justify-content: space-between;
+            padding:0;
+        }
+        @media (max-width:768px) {
+            display:none;
+        }
+    }
+    .contactContainer {
+        &:last-of-type {
+            @media (max-width: 940px) {
+                flex-direction: row-reverse;
+                text-align:right;
+            }
+        }
     }
 }
 
+// Main Header Navigation
+
 .header-nav {
     background-color:$accentColor;
-    color:white;
-    
-    a {
+    .headerFlex {
         color:white;
-        font-size:1.8rem;
-    }
-    .header-nav-main {
-        width:80%;
         justify-content: space-between;
-        padding:20px 2%;
-        border-right:1px solid #5499f7;
+        padding:20px 1%;
+        @media (max-width: 940px) {
+            // justify-content: flex-start;
+        }
         li {
             text-transform: uppercase;
-            margin:0 3%;
             &:last-of-type {
                 text-transform: capitalize;
             }
         }
-    }
-    .header-nav-rightSocial {
-        width:20%;
-        text-align:right;
-        justify-content: space-between;
-        padding:2%;
-    }
+        a {
+            color:white;
+            font-size:1.8rem;
+            @media (max-width: 940px) {
+                margin:0 5px;
+            }
+        }
+    } 
 }
 
-.header-nav-rightShop {
+.header-nav-main {
+    flex-basis:70%;
+}
+.header-nav-shop {
     display:flex;
+    justify-content: space-around;
+    width:100px;
     align-items: center;
-    img {
-        padding:10px 40px;
+    @media (max-width: 940px) {
+        margin-left:50px;
     }
-    .shop-cart {
+    .fa-search {
         position:relative;
         &:after {
-            content: '2';
-            width:25px;
-            height:25px;
-            text-align: center;
-            border-radius: 50%;
-            color:white;
-            background: #2d71cd;
+            content:' ';
+            width:2px;
+            height:72px;
+            background:#5499f7;
             position:absolute;
-            left:55px;
-            top:15px;
+            left:32px;
+            top:-28px;
+            @media (max-width:940px) {
+                left:-70px;
+            }
+            @media (max-width:490px) {
+                left:-60px;
+            }
         }
     }
 }
+.header-nav-social {
+    text-align:right;
+    justify-content: space-between;
+    flex-basis:15%;
+    @media (max-width: 940px) {
+        margin:0 50px;
+    }
+}
 
-.header-banner {
-    height:100vh;
+.shop-cart {
+    position:relative;
+    &:after {
+        content: '2';
+        width:25px;
+        height:25px;
+        text-align: center;
+        border-radius: 50%;
+        color:white;
+        background: #2d71cd;
+        position:absolute;
+        left:11px;
+        top:18px;
+    }
+}
+
+
+// Main Hero Banner
+
+.header-bannerCarousel {
     background-image:linear-gradient(rgba(1,22,50,0.45),rgba(1,22,50,0.45)), url('../assets/hero-img.jpg');
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    height:100vh;
+}
+
+.header-banner {
+    height:100vh;
+    padding:0 40px;
+    width:100%;
     .headerFlex {
         flex-direction: column;
         align-items: flex-start;
@@ -147,9 +235,10 @@ header {
     }
     .header-banner-title {
         padding-bottom:50px;
-        // h1 {
-        //     padding-bottom:20px 0];
-        // }
+        @media (max-width: 940px) {
+            margin:auto auto;
+            text-align: center;
+        }
     }
     .header-banner-subtitle {
         padding-bottom:60px;
@@ -157,10 +246,64 @@ header {
             color:white;
             font-size:1.8rem;
             line-height:2;
+            @media (max-width: 940px) {
+                margin:auto auto;
+                text-align: center;
+            }
+            @media (max-width:490px) {
+                line-height:1.5;
+            }
         }
     }
     a {
         justify-content: center;
         align-self: flex-start;
+        @media (max-width: 940px) {
+            margin:auto auto;
+            text-align: center;
+        }
     }
+}
+
+// Hamburger Menu
+.fa-bars {
+    display:none;
+    cursor:pointer;
+}
+
+@media (max-width: 940px) {
+    .headerFlex {
+        position:relative;
+    }
+    .fa-bars {
+        position:absolute;
+        display:inline-block;
+        display:flex;
+        align-items: center;
+    }
+    .header-nav-main.open {
+        display:block;
+    }
+	.header-nav-main {
+		display:none;
+		text-align: center;
+		position:fixed;
+		top:0;
+		left:0;
+		height: 100vh;
+		width: 100%;
+		background: rgba(0,0,0,0.94);
+        z-index:20;
+        ul {
+           display:flex;
+           flex-direction: column;
+           padding:100px 0 40px;
+           li {
+               padding:10px;
+               .btn-accent {
+                   display:block;
+               }
+           }
+        }
+	}
 }
