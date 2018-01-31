@@ -362,24 +362,23 @@ header {
       flex-direction: row-reverse;
       text-align: right; } }
 
-.header-nav {
-  background-color: #2f87fd; }
-  .header-nav .headerFlex, .header-nav .header-companyInfo .header-companyInfo-info, .header-companyInfo .header-nav .header-companyInfo-info {
+.header-nav .headerFlex, .header-nav .header-companyInfo .header-companyInfo-info, .header-companyInfo .header-nav .header-companyInfo-info {
+  background-color: #2f87fd;
+  color: white;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 20px 1%; }
+  .header-nav .headerFlex li, .header-nav .header-companyInfo .header-companyInfo-info li, .header-companyInfo .header-nav .header-companyInfo-info li {
+    text-transform: uppercase; }
+    .header-nav .headerFlex li:last-of-type, .header-nav .header-companyInfo .header-companyInfo-info li:last-of-type, .header-companyInfo .header-nav .header-companyInfo-info li:last-of-type {
+      text-transform: capitalize; }
+  .header-nav .headerFlex a, .header-nav .header-companyInfo .header-companyInfo-info a, .header-companyInfo .header-nav .header-companyInfo-info a {
     color: white;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    padding: 20px 1%; }
-    .header-nav .headerFlex li, .header-nav .header-companyInfo .header-companyInfo-info li, .header-companyInfo .header-nav .header-companyInfo-info li {
-      text-transform: uppercase; }
-      .header-nav .headerFlex li:last-of-type, .header-nav .header-companyInfo .header-companyInfo-info li:last-of-type, .header-companyInfo .header-nav .header-companyInfo-info li:last-of-type {
-        text-transform: capitalize; }
-    .header-nav .headerFlex a, .header-nav .header-companyInfo .header-companyInfo-info a, .header-companyInfo .header-nav .header-companyInfo-info a {
-      color: white;
-      font-size: 1.8rem; }
-      @media (max-width: 940px) {
-        .header-nav .headerFlex a, .header-nav .header-companyInfo .header-companyInfo-info a, .header-companyInfo .header-nav .header-companyInfo-info a {
-          margin: 0 5px; } }
+    font-size: 1.8rem; }
+    @media (max-width: 940px) {
+      .header-nav .headerFlex a, .header-nav .header-companyInfo .header-companyInfo-info a, .header-companyInfo .header-nav .header-companyInfo-info a {
+        margin: 0 5px; } }
 
 .header-nav-main {
   -ms-flex-preferred-size: 70%;
