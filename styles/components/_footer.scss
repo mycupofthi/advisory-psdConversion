@@ -33,6 +33,9 @@ footer {
     }
     &:nth-of-type(2) {
         padding:0 30px;
+        @media (max-width:940px) {
+            padding:0;
+        }
     }
     h2 {
         color:white;
